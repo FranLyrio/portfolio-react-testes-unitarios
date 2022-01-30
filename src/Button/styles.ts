@@ -8,7 +8,7 @@ const wrapperModifiers = {
   withIcon: () => css`
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   `
 }
 
