@@ -46,11 +46,11 @@ describe('<Button />', () => {
     render(<Button disabled>Click me</Button>)
 
 
-    expect(screen.getByText(/click me/i)).toHaveStyleRule(
+    expect(screen.getByRole('button', { name: /click me/i })).toHaveStyleRule(
       'cursor',
       'not-allowed',
       {
-        modifier: ':cursor'
+        modifier: ':disabled'
       }
     )
   })
