@@ -41,4 +41,17 @@ describe('<Button />', () => {
 
     expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
+
+  it('should render a disabled button', () => {
+    render(<Button disabled>Click me</Button>)
+
+
+    expect(screen.getByText(/click me/i)).toHaveStyleRule(
+      'cursor',
+      'not-allowed',
+      {
+        modifier: ':cursor'
+      }
+    )
+  })
 })
