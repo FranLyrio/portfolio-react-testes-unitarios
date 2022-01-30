@@ -6,9 +6,9 @@ export type ButtonProps = {
   icon?: React.ReactNode;
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
-export const Button = ({ children, icon }: ButtonProps) => {
+export const Button = ({ children, icon, ...props }: ButtonProps) => {
   return (
-    <S.Wrapper hasIcon={!!icon}>
+    <S.Wrapper hasIcon={!!icon} {...props}>
       {!!icon && icon}
 
       {children}
