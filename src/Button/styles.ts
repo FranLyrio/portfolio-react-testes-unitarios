@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { ButtonProps } from '.';
 
 type WrapperProps = {
 	hasIcon: boolean;
