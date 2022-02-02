@@ -17,6 +17,6 @@ describe('<Input />', () => {
   it('should render input with placeholder', () => {
     render(<Input placeholder="Here comes a placeholder" />)
 
-    expect(screen.getByPlaceholderText(/here comes a placeholder/i))
+    expect(screen.getByPlaceholderText(/here comes a placeholder/i)).toBeInTheDocument()
   })
 })
