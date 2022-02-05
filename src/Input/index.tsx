@@ -11,10 +11,12 @@ export const Input = ({ name, label, icon, ...props }: InputProps) => {
   return (
     <S.Wrapper>
       {!!label && <label htmlFor={name}>{label}</label>}
-
-      {!!icon && icon}
       
-      <input id={name} {...props} />
+      <S.InputWrapper>
+        {!!icon && icon}
+        
+        <input id={name} {...props} />
+      </S.InputWrapper>
     </S.Wrapper>
   )
 }
