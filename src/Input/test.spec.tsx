@@ -43,4 +43,19 @@ describe('<Input />', () => {
 
     expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
+
+  it('should change its value when typing', async () => {
+    const onInputChange = jest.fn()
+    render(<Input onInputChange={onInputChange} />)
+
+    const input = screen.getByRole('textbox')
+    const text = 'this is my text'
+
+    await waitFor(() => {
+      expect(input).toHaveValue(text)
+      expect(onInputChange).toHaveBeenCalledTimes(text.length)
+    })
+
+    expect(onInputChange).toHaveBeenCalledWith(text)
+  })
 })
