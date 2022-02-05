@@ -10,12 +10,12 @@ export type InputProps = {
 export const Input = ({ name, label, icon, ...props }: InputProps) => {
   return (
     <S.Wrapper>
-      {!!label && <label htmlFor={name}>{label}</label>}
-      
+      {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
+
       <S.InputWrapper>
         {!!icon && icon}
         
-        <input id={name} {...props} />
+        <S.Input id={name} {...props} />
       </S.InputWrapper>
     </S.Wrapper>
   )
