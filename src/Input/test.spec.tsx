@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import { render, screen, waitFor } from "@testing-library/react"
 import userEvent from '@testing-library/user-event'
 import { Input } from "."
 
@@ -28,8 +28,12 @@ describe('<Input />', () => {
     expect(input.parentElement).toBeInTheDocument()
     
     userEvent.tab()
-    expect(input.parentElement).toHaveStyle({
-      'border-color': '#820ad1'
+    expect(input).toHaveFocus()
+
+    waitFor(() => {
+      expect(input.parentElement).toHaveStyle({
+        'border-color': '#820ad1'
+      })
     })
   })
 })
