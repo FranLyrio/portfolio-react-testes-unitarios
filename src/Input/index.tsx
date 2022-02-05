@@ -5,10 +5,18 @@ import * as S from './styles'
 export type InputProps = {
   label?: string;
   icon?: ReactNode;
+  error?: string;
   onInputChange?: (value: string) => void;
 } & InputHTMLAttributes<HTMLInputElement>
 
-export const Input = ({ name, label, icon, onInputChange, ...props }: InputProps) => {
+export const Input = ({ 
+  name, 
+  label, 
+  icon, 
+  onInputChange, 
+  error, 
+  ...props
+}: InputProps) => {
   const [value, setValue] = useState('')
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,6 +36,8 @@ export const Input = ({ name, label, icon, onInputChange, ...props }: InputProps
         
         <S.Input id={name} onChange={onChange} value={value} {...props} />
       </S.InputWrapper>
+
+      {!!error && <p>{error}</p>}
     </S.Wrapper>
   )
 }
