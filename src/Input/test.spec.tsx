@@ -76,4 +76,10 @@ describe('<Input />', () => {
 
     expect(onInputChange).not.toHaveBeenCalled()
   })
+
+  it('should render with error message', () => {
+    render(<Input error="Error message" />)
+
+    expect(screen.getByText(/error message/i)).toBeInTheDocument()
+  })
 })
