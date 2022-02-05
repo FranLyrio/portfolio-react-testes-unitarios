@@ -50,6 +50,7 @@ describe('<Input />', () => {
 
     const input = screen.getByRole('textbox')
     const text = 'this is my text'
+    userEvent.type(input, text)
 
     await waitFor(() => {
       expect(input).toHaveValue(text)
