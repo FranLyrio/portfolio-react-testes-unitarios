@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react"
+import userEvent from '@testing-library/user-event'
 import { Input } from "."
 
 describe('<Input />', () => {
@@ -18,5 +19,17 @@ describe('<Input />', () => {
     render(<Input placeholder="Here comes a placeholder" />)
 
     expect(screen.getByPlaceholderText(/here comes a placeholder/i)).toBeInTheDocument()
+  })
+
+  it('should render input with border when is focused', () => {
+    render(<Input name="input" label="Label" />)
+
+    const input = screen.getByLabelText(/label/i)
+    expect(input.parentElement).toBeInTheDocument()
+    
+    userEvent.tab()
+    expect(input.parentElement).toHaveStyle({
+      'border-color': '#820ad1'
+    })
   })
 })
