@@ -59,4 +59,21 @@ describe('<Input />', () => {
 
     expect(onInputChange).toHaveBeenCalledWith(text)
   })
+
+  it('should not change its value when disabled', async () => {
+    const onInputChange = jest.fn()
+    render(<Input disabled onInputChange={onInputChange} />)
+
+    const input = screen.getByRole('textbox')
+    expect(input).toBeDisabled()
+
+    const text = 'this is my text'
+    userEvent.type(input, text)
+
+    await waitFor(() => {
+      expect(input).not.toHaveValue(text)
+    })
+
+    expect(onInputChange).not.toHaveBeenCalled()
+  })
 })
