@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react"
 import userEvent from '@testing-library/user-event'
 import { Input } from "."
+import { svg } from "../utils/icon"
 
 describe('<Input />', () => {
   it('should render input component with label', () => {
@@ -35,5 +36,11 @@ describe('<Input />', () => {
         'border-color': '#820ad1'
       })
     })
+  })
+
+  it('should render input with icon', () => {
+    render(<Input icon={svg()} />)
+
+    expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
 })
