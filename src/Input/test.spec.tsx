@@ -39,7 +39,7 @@ describe('<Input />', () => {
   })
 
   it('should render input with icon', () => {
-    render(<Input icon={svg()} />)
+    render(<Input icon={svg('icon')} />)
 
     expect(screen.getByTestId('icon')).toBeInTheDocument()
   })

@@ -1,7 +1,7 @@
-export const svg = () => {
+export const svg = (dataTestId: string) => {
   return (
     <svg
-      data-testid="icon"
+      data-testid={dataTestId}
       width="16"
       height="16"
       viewBox="0 0 16 16"

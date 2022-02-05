@@ -17,7 +17,7 @@ describe('<Button />', () => {
   })
 
   it('should render a button with icon', () => {
-    render(<Button icon={svg()}>Click me</Button>)
+    render(<Button icon={svg('icon')}>Click me</Button>)
 
     expect(screen.getByText(/click me/i)).toHaveStyle({
       display: 'inline-flex',
