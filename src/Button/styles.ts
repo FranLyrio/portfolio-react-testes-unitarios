@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 type WrapperProps = {
-	hasIcon: boolean;
+	hasIcon: boolean
 }
 
 const wrapperModifiers = {

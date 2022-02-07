@@ -3,10 +3,10 @@ import React, { InputHTMLAttributes, ReactNode, useState } from "react"
 import * as S from './styles'
 
 export type InputProps = {
-  label?: string;
-  icon?: ReactNode;
-  error?: string;
-  onInputChange?: (value: string) => void;
+  label?: string
+  icon?: ReactNode
+  error?: string
+  onInputChange?: (value: string) => void
 } & InputHTMLAttributes<HTMLInputElement>
 
 export const Input = ({ 
