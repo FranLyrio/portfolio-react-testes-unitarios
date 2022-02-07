@@ -16,12 +16,6 @@ describe('<Checkbox />', () => {
     expect(screen.queryByLabelText('Label')).not.toBeInTheDocument()
   })
 
-  it('should change its value when the event was dispatch', () => {
-    render(<Checkbox />)
-
-    expect(screen.queryByLabelText('Label')).not.toBeInTheDocument()
-  })
-
   it('should call onCheck function and change its value for "false"', () => {
     const onChange = jest.fn()
 
