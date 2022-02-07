@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 
 import { Button } from '.'
-import { svg } from '../utils/icon'
+import { svg } from '../../utils/icon'
 
 describe('<Button />', () => {
   it('Should render button component by default', () => {

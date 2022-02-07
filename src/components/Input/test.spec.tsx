@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react"
 import userEvent from '@testing-library/user-event'
 import { Input } from "."
-import { svg } from "../utils/icon"
+import { svg } from "../../utils/icon"
 
 describe('<Input />', () => {
   it('should render input component with label', () => {
