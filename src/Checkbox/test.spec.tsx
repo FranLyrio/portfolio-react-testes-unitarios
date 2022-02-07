@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { Checkbox } from '.'
@@ -22,12 +22,16 @@ describe('<Checkbox />', () => {
     expect(screen.queryByLabelText('Label')).not.toBeInTheDocument()
   })
 
-  it('should call onCheck function when value its changes', () => {
+  it('should call onCheck function and change its value for "false"', () => {
     const onChange = jest.fn()
 
-    render(<Checkbox onChange={onChange} />)
+    render(<Checkbox onCheck={onChange} isChecked />)
 
-    userEvent.click(screen.getByRole('checkbox'))
-    expect(onChange).toBeCalledTimes(1)
+    waitFor(() => {
+      userEvent.click(screen.getByRole('checkbox'))
+      expect(onChange).toBeCalledTimes(1)
+    })
+
+    expect(onChange).toBeCalledWith(false)
   })
 })
