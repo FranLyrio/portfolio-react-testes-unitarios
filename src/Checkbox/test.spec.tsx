@@ -16,6 +16,15 @@ describe('<Checkbox />', () => {
     expect(screen.queryByLabelText('Label')).not.toBeInTheDocument()
   })
 
+  it('should change its value by clicking on label', () => {
+    const onCheck = jest.fn()
+
+    render(<Checkbox label="checkbox label" name="label" onCheck={onCheck} />)
+
+    userEvent.click(screen.getByLabelText(/checkbox label/i))
+    expect(onCheck).toBeCalledTimes(1)
+  })
+
   it('should call onCheck function and change its value for "false"', () => {
     const onChange = jest.fn()
 
