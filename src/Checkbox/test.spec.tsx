@@ -34,4 +34,17 @@ describe('<Checkbox />', () => {
 
     expect(onChange).toBeCalledWith(false)
   })
+
+  it('should call onCheck function and change its value for "true"', () => {
+    const onChange = jest.fn()
+
+    render(<Checkbox onCheck={onChange} />)
+
+    waitFor(() => {
+      userEvent.click(screen.getByRole('checkbox'))
+      expect(onChange).toBeCalledTimes(1)
+    })
+
+    expect(onChange).toBeCalledWith(true)
+  })
 })
