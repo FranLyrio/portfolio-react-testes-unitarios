@@ -26,9 +26,9 @@ export const Checkbox = ({
     <>
       <input 
         type="checkbox" 
-        id={name} 
+        id={name}
         onChange={onChange} 
-        checked={isChecked} 
+        checked={checked} 
         {...props}
       />
 
